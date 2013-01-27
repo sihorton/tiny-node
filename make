@@ -14,7 +14,7 @@ cd "$SCRIPTPATH/../src"
 git checkout master
 git pull
 git checkout "$1"
-./configure --prefix=../build
+./configure --prefix=$SCRIPTPATH/../build
 make && make install
 
 

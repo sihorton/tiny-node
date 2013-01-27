@@ -17,7 +17,7 @@ tcz-pack nodejs-doc
 #cp -av $FROM/lib/node/wafadmin/* $DEST/nodejs-dev/usr/local/lib/node/wafadmin
 #tcz-pack nodejs-dev
 
-mkdir -p nodejs/usr/local/bin/node
+mkdir -p nodejs/usr/local/bin/
 cp -av $FROM/bin/node $DEST/nodejs/usr/local/bin/node
 cp -av $FROM/bin/node-waf $DEST/nodejs/usr/local/bin/node-waf
 cp -P $FROM/bin/npm $DEST/nodejs/usr/local/bin/npm
