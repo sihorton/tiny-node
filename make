@@ -8,12 +8,13 @@ then
    echo "missing node version, e.g. sudo ./$SCRIPT v0.8.18"
    exit
 fi
+
 mkdir -p "$SCRIPTPATH/../src"
 cd "$SCRIPTPATH/../src"
 git checkout master
 git pull
 git checkout "$1"
-./configure --prefix=build
+./configure --prefix=../build
 make && make install
 
 

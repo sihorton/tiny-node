@@ -1,0 +1,35 @@
+#!/bin/sh
+echo "this script needs to be run as sudo"
+SCRIPTABS=$(readlink -f $0)
+SCRIPTPATH=`dirname $SCRIPTABS`
+
+DEST="$SCRIPTPATH"
+FROM="$SCRIPTPATH/../build"
+
+echo "remember to update version number, size, and change log in the .info files"
+#tce-load -i tcztools
+
+mkdir -p nodejs-doc/usr/local/share/man/man1
+cp -av $FROM/share/man/man1/* $DEST/nodejs-doc/usr/local/share/man/man1/
+tcz-pack nodejs-doc
+
+#cp -av $FROM/include/node/* $DEST/nodejs-dev/usr/local/include/node
+#cp -av $FROM/lib/node/wafadmin/* $DEST/nodejs-dev/usr/local/lib/node/wafadmin
+#tcz-pack nodejs-dev
+
+mkdir -p nodejs/usr/local/bin/node
+cp -av $FROM/bin/node $DEST/nodejs/usr/local/bin/node
+cp -av $FROM/bin/node-waf $DEST/nodejs/usr/local/bin/node-waf
+cp -P $FROM/bin/npm $DEST/nodejs/usr/local/bin/npm
+mkdir -p nodejs/usr/local/lib/node_modules
+cp -av $FROM/lib/node_modules/* $DEST/nodejs/usr/local/lib/node_modules/
+mkdir -p nodejs/usr/local/lib/node/wafadmin
+cp -av $FROM/lib/node/wafadmin/* $DEST/nodejs/usr/local/lib/node/wafadmin
+mkdir -p nodejs/usr/local/lib/dtrace
+cp -av $FROM/lib/dtrace/* $DEST/nodejs/usr/local/lib/dtrace
+
+#ln $DEST/nodejs/usr/local/lib/node_modules/npm/bin/npm-cli.js $DEST/nodejs/usr/local/bin/npm 
+tcz-pack nodejs
+
+
+
