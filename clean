@@ -1,0 +1,6 @@
+#!/bin/sh
+echo "cleaning directory structures"
+
+rm -rf nodejs-doc
+
+#mkdir -p nodejs-doc/usr/local/share/man/man1
