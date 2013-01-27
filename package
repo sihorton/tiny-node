@@ -6,8 +6,7 @@ SCRIPTPATH=`dirname $SCRIPTABS`
 DEST="$SCRIPTPATH"
 FROM="$SCRIPTPATH/../build"
 
-echo "remember to update version number, size, and change log in the .info files"
-#tce-load -i tcztools
+echo "remember to update version number and change log date in the .info files"
 
 mkdir -p nodejs-doc/usr/local/share/man/man1
 cp -av $FROM/share/man/man1/* $DEST/nodejs-doc/usr/local/share/man/man1/
