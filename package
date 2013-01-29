@@ -6,6 +6,10 @@ SCRIPTPATH=`dirname $SCRIPTABS`
 DEST="$SCRIPTPATH"
 FROM="$SCRIPTPATH/../build"
 
+echo "fixing depreciated tce directory location"
+echo "/mnt/sda1/tce" > /opt/.tce_dir
+chmod +x /opt/.tce_dir
+
 echo "remember to update version number and change log date in the .info files"
 
 mkdir -p nodejs-doc/usr/local/share/man/man1
