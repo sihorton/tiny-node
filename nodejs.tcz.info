@@ -1,16 +1,20 @@
 Title:          nodejs.tcz
 Description:    nodejs (TESTING)
-Version:        0.8.18
+Version:        0.8.19
 Author:         Ryan Lienhart Dahl
 Original-site:  http://www.nodejs.org/
 Copying-policy: MIT License
 Size:		4.5M
 Extension_by:   slamet, solorin, sihorton
 Tags:	        development interpreted internet server javascript js ecmascript
-Comments:       ----
-Change-log:	2013/01/27 v0.8.18
+Comments:       npm works out of the box for javascript modules.
+		for native modules npm needs a c++ build environment so install make.tcz and compiletc.tcz
+		if npm complains of a missing lib while building a particular native module then search for the missing
+		lib in the app browser, so for example libexpat can be found by searching for expat and then
+		installing expat2.tcz
+Change-log:	2013/02/07 v0.8.19
+		2013/01/27 v0.8.18
 		2012/03/22 v0.6.13
 		2011/09/08 v0.4.11
 		2011/02/04 v0.2.6 
-Current:	2013/01/27 v0.8.18
-
+Current:	2013/02/07 v0.8.19

@@ -23,9 +23,17 @@ tcz-pack nodejs-doc
 mkdir -p nodejs/usr/local/bin/
 cp -av $FROM/bin/node $DEST/nodejs/usr/local/bin/node
 cp -av $FROM/bin/node-waf $DEST/nodejs/usr/local/bin/node-waf
-cp -P $FROM/bin/npm $DEST/nodejs/usr/local/bin/npm
-mkdir -p nodejs/usr/local/lib/node_modules
-cp -av $FROM/lib/node_modules/* $DEST/nodejs/usr/local/lib/node_modules/
+
+mkdir -p nodejs/usr/local/bin/node_modules
+cp -av $FROM/lib/node_modules/* $DEST/nodejs/usr/local/bin/node_modules/
+cp -av $FROM/lib/node_modules/npm/bin/npm $DEST/nodejs/usr/local/bin/npm
+
+#cp -P $FROM/bin/npm $DEST/nodejs/usr/local/bin/npm
+#rm $DEST/nodejs/usr/local/bin/npm
+#ln -s $DEST/nodejs/usr/local/bin/node_modules/npm/bin/npm $DEST/nodejs/usr/local/bin/npm 
+
+
+
 mkdir -p nodejs/usr/local/lib/node/wafadmin
 cp -av $FROM/lib/node/wafadmin/* $DEST/nodejs/usr/local/lib/node/wafadmin
 mkdir -p nodejs/usr/local/lib/dtrace

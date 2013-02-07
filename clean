@@ -3,5 +3,5 @@ echo "deleting directory structures"
 
 rm -rf nodejs-doc
 rm -rf nodejs
-rm -rf release
+#rm -rf release
 rm -rf ../build

@@ -13,7 +13,6 @@ v1.0 | Cosmin Apreutesei | tcztools.googlecode.com | MIT License
 
 Usage: $@ [-y|--yes] [-q|--quiet] [--debug] <name1> ...
 
-Requires mutt configured for sending emails.
 "
 exit 1
 }
@@ -39,7 +38,7 @@ local dst
 dst=release/$name.submit
 say -n "Packing $name.tcz..."
 must rm -rf $dst
-must mkdir $dst
+must mkdir -p $dst
 must ln -s "$PWD"/$name.tcz.info $dst
 must ln -s $tmp/$name.tcz.list $dst
 must ln -s $tmp/$name.tcz $dst
