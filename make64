@@ -5,7 +5,7 @@ SCRIPT=`basename $0`
 
 export CFLAGS="-mtune=generic -Os -pipe"
 export CXXFLAGS="-mtune=generic -Os -pipe"
-export LDFLAGS="-W1,-O1"
+export LDFLAGS="-Wl,-O1"
 
 if [ -z "$1" ]
 then
